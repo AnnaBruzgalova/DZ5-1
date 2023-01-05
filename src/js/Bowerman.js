@@ -1,16 +1,9 @@
-import { Character } from './Character.js';
+import Character from './Character';
 
-export class Bowerman extends Character {
-  constructor(name, type, health, level, attack, defence) {
-    super(name, health, level);
-    this.type = (function func() {
-      if (typeof type === 'string') {
-        return type;
-      }
-      throw new Error('Некорректное значение "type"!');
-    }());
-    this.attack = attack;
-    this.defence = defence;
+export default class Bowman extends Character {
+  constructor(name, type) {
+    super(name, type);
+    this.attack = 25;
+    this.defence = 25;
   }
 }
-export const bowerman = new Bowerman('Анна', 'Bowman', 100, 1, 25, 25);

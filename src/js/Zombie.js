@@ -1,16 +1,9 @@
-import { Character } from './Character.js';
+import Character from './Character';
 
-export class Zombie extends Character {
-  constructor(name, type, health, level, attack, defence) {
-    super(name, health, level);
-    this.type = (function func() {
-      if (typeof type === 'string') {
-        return type;
-      }
-      throw new Error('Некорректное значение "type"!');
-    }());
-    this.attack = attack;
-    this.defence = defence;
+export default class Zombie extends Character {
+  constructor(name, type) {
+    super(name, type);
+    this.attack = 40;
+    this.defence = 10;
   }
 }
-export const zombie = new Zombie('Анна', 'Zombie', 100, 1, 40, 10);
